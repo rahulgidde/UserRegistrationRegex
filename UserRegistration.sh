@@ -53,7 +53,22 @@ function validateNumber()
 		echo "Invalid Mobile Number"
 	fi
 }
+
+#FUNCTION FOR VALIDATE Password MINIMUM 8 CHARACTERS
+function validatePassword()
+{
+	read -p "Enter Password: " password
+	local pattern="^[0-9]{8,}$"
+	if [[ $password =~ $pattern ]]
+	then
+		echo "Valid Password"
+	else
+		echo "Invalid Password Enter Minimum 8 Characters"
+	fi
+}
+
 validateFirstName
 validateLastName
 validateEmail
 validateNumber
+validatePassword
