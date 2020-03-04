@@ -58,9 +58,8 @@ function validateNumber()
 function validatePassword()
 {
 	read -p "Enter Password: " password
-	local pattern1="^[a-zA-Z0-9]{8,}$"
-	local pattern2="[A-Z]"
-	if [[ $password =~ $pattern1 ]] && [[ $password =~ $pattern2 ]]
+	local pattern2="([A-Z][a-z]*)|([A-Z][0-9]*)|([A-Z][a-z0-9]*)$"
+	if [[ ${#password} -gt 8 ]] && [[ $password =~ $pattern2 ]]
 	then
 		echo "Valid Password"
 	else
