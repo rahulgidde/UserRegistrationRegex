@@ -27,7 +27,19 @@ function validateLastName()
 		echo "Invalid Last Name Enter Last Name Start With Cap and Enter minimum 3 Characters"
 	fi
 }
+
+#FUNCTION FOR VALIDATE EMAIL
+function validateEmail()
+{
+	read -p "Enter Email: " email
+	local pattern="^[a-z]{3}[.][a-zA-Z]*[@][a-z]{2}[.][a-z]{2}[.][a-z]{2,4}$"
+	if [[ $email =~ $pattern ]]
+	then
+		echo "Valid Email"
+	else
+		echo "Invalid Email"
+	fi
+}
 validateFirstName
 validateLastName
-
-
+validateEmail
