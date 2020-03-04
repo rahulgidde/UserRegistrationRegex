@@ -54,21 +54,23 @@ function validateNumber()
 	fi
 }
 
-#FUNCTION FOR VALIDATE Password MINIMUM 8 CHARACTERS
+#FUNCTION FOR VALIDATE Password
 function validatePassword()
 {
 	read -p "Enter Password: " password
-	local pattern="^[0-9]{8,}$"
-	if [[ $password =~ $pattern ]]
+	local pattern1="^[a-zA-Z0-9]{8,}$"
+	local pattern2="[A-Z]"
+	if [[ $password =~ $pattern1 ]] && [[ $password =~ $pattern2 ]]
 	then
 		echo "Valid Password"
 	else
 		echo "Invalid Password Enter Minimum 8 Characters"
+		echo "Enter Atleast One Upper Case"
 	fi
 }
 
-validateFirstName
-validateLastName
-validateEmail
-validateNumber
+#validateFirstName
+#validateLastName
+#validateEmail
+#validateNumber
 validatePassword
