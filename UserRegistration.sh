@@ -69,8 +69,8 @@ function validatePassword()
 	fi
 }
 
-#validateFirstName
-#validateLastName
-#validateEmail
-#validateNumber
+validateFirstName
+validateLastName
+validateEmail
+validateNumber
 validatePassword
