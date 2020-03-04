@@ -40,6 +40,20 @@ function validateEmail()
 		echo "Invalid Email"
 	fi
 }
+
+#FUNCTION FOR VALIDATE MOBILE FORMAT
+function validateNumber()
+{
+	read -p "Enter Mobile Number: " number
+	local pattern="^[0-9]{2}[ ][0-9]{10}$"
+	if [[ $number =~ $pattern ]]
+	then
+		echo "Valid Mobile Number"
+	else
+		echo "Invalid Mobile Number"
+	fi
+}
 validateFirstName
 validateLastName
 validateEmail
+validateNumber
