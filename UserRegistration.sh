@@ -54,17 +54,16 @@ function validateNumber()
 	fi
 }
 
-#FUNCTION FOR VALIDATE Password
+#FUNCTION FOR VALIDATE PASSWORD
 function validatePassword()
 {
 	read -p "Enter Password: " password
-	local pattern2="([A-Z][a-z]*)|([A-Z][0-9]*)|([A-Z][a-z0-9]*)$"
-	if [[ ${#password} -gt 8 ]] && [[ $password =~ $pattern2 ]]
+	pattern="([a-zA-Z]*[0-9]+[a-z0-9]*[A-Z])|([A-Z]+[a-z0-9]*[0-9]+[a-zA-Z]*)$"
+	if [[ ${#password} -gt 8 ]] && [[ $password =~ $pattern ]]
 	then
 		echo "Valid Password"
 	else
-		echo "Invalid Password Enter Minimum 8 Characters"
-		echo "Enter Atleast One Upper Case"
+		echo "Invalid Password"
 	fi
 }
 
